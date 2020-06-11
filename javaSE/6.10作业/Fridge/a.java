@@ -1,0 +1,85 @@
+class Elephant {
+
+    int heightInCM;
+}
+class Lion {
+    int heightInCM;
+}
+
+class Fridge {
+
+    int heightInCM;
+    Elephant storage;
+    Lion storage1;
+
+    void store(Elephant elephant) {
+        if (storage == elephant) {
+            System.out.println("冰箱已经满了。");
+        } else {
+            storage = elephant;
+        }
+    }
+
+    void store(Lion lion) {
+        if (storage1 == lion) {
+            System.out.println("冰箱已经满了。");
+        } else {
+            storage1 = lion;
+        }
+    }
+//作业1.取出大象的方法
+    Elephant remove(Elephant elephant) {
+        Elephant temp = storage;
+        storage = null;
+        return temp;
+    }
+}
+
+class ObjectDemo {
+    static Elephant createElephant(int heightInCM) {
+        System.out.printf("创建一个大象，高度%d厘米\n", heightInCM);
+        // 使用定义的类作为数据类型
+        // 使用new 创建一个对象（实例）
+        Elephant elephant = new Elephant();
+        // 使用. 访问对象的属性，可以对属性赋值或使用
+        elephant.heightInCM = heightInCM;
+        return elephant;
+    }
+    //创建狮子对象的方法
+    static Lion createLion(int heightInCM) {
+        System.out.printf("创建一个狮子，高度%d厘米\n", heightInCM);
+        Lion lion = new Lion();
+        lion.heightInCM = heightInCM;
+        return lion;
+    }
+    static Fridge createFridge(int heightInCM) {
+        System.out.printf("创建一个冰箱，高度%d厘米\n", heightInCM);
+        Fridge fridge = new Fridge();
+        fridge.heightInCM = heightInCM;
+        return fridge;
+    }
+
+    static void putInElephant(Elephant elephant, Fridge fridge) {
+        System.out.printf("把%d厘米高的大象装进%d厘米高的冰箱\n", elephant.heightInCM, fridge.heightInCM);
+        if (elephant.heightInCM < fridge.heightInCM) {
+
+            // 使用对象方法
+            fridge.store(elephant);
+            System.out.printf("冰箱里面的大象高度是%d厘米\n", fridge.storage.heightInCM);
+        } else {
+            System.out.printf("冰箱装不下!\n");
+        }
+
+
+    }
+
+    public static void main(String[] args) {
+        Elephant elephant = createElephant(300);
+        Lion lion = createLion(200);
+
+        Fridge fridge = createFridge(500);
+        putInElephant(elephant, fridge);
+        fridge.store(lion);
+
+    }
+}
