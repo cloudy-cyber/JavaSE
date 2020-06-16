@@ -30,7 +30,7 @@ public class CircleApp {
 		circle2.setRadius(25.5);
 		System.out.println("修改后circle3的周长=" + circle3.calPerimeter());
 		System.out.println("修改后circle3的面积=" + circle3.calArea());
-		//circle的周长和面积发生了变化
+		//circle3的周长和面积发生了变化
 
 		// circle3的值是否为null
 

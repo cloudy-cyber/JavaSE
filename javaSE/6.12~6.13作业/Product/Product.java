@@ -1,7 +1,7 @@
 class Product {
 	private String name;
 	private double price;
-	private static int scanCode = 1000;
+	private static int scanCode = 1000;//编号
 	private int num;
 
 	public Product(String name, double price) {
