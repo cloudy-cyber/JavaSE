@@ -1,3 +1,5 @@
+package club.banyuan.June10.Fridge;
+
 class Elephant {
 
     int heightInCM;

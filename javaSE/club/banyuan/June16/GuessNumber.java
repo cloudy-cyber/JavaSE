@@ -1,3 +1,5 @@
+package club.banyuan.June16;
+
 import java.util.Random;
 import java.util.Scanner;
 
