@@ -50,8 +50,7 @@ public class StringBuffer {
 			string4 += (arr[k] + "");
 		}
 		return string4;
-
-
 	}
+	//
 
 }
