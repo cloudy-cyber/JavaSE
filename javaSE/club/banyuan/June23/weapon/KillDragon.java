@@ -2,7 +2,7 @@ package club.banyuan.June23.weapon;
 
 import java.util.Random;
 
-public class WeaponKillDragon implements Weapon{
+public class KillDragon implements Weapon{
     @Override
     public String getName() {
         return "屠龙刀";
@@ -10,7 +10,7 @@ public class WeaponKillDragon implements Weapon{
 
     @Override
     public int attack() {
-        Random random =new Random();
+        Random random=new Random();
         return random.nextInt(10)+20;
     }
 }

@@ -1,6 +1,6 @@
 package club.banyuan.June23.weapon;
 
-public class WeaponSkyBlade implements Weapon{
+public class SkyBlade implements Weapon{
     @Override
     public String getName() {
         return "倚天剑";
