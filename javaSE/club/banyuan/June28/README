@@ -23,7 +23,7 @@ static class Outer{
  }
 }
 ```
-答：编译报错，静态外部类不可以定义非静态内部类
+答：编译报错，外部类不允许用static修饰
 #### 3.
 ```
 class Outer {
@@ -96,8 +96,8 @@ class ABC
     }
 }
 ```
-答 ABC abc = new ABC();
-  XYZ xyz = abc.new XYZ();
+答 ABC.XYZ a = new ABC().new XYZ();
+   a.i;
 
 #### 7. 运行以下程序时，它是否在控制台上打印“SUCCESS”？
 ```
@@ -381,7 +381,7 @@ class A
     }
 }
 ```
-答 不是很懂
+答 实例化不了B，B是局部类
 
 #### 18.
 ```

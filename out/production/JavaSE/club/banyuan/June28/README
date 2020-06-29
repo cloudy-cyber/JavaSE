@@ -11,6 +11,7 @@ class Outer{
  }
 }
 ```
+答：编译报错 因为Inner是内部类，创建对象必须依赖外部类，不可以直接new
 #### 2. 以下代码能否通过编译，为什么
 ```
 static class Outer{
@@ -22,7 +23,7 @@ static class Outer{
  }
 }
 ```
-
+答：编译报错，外部类不允许用static修饰
 #### 3.
 ```
 class Outer {
@@ -47,6 +48,7 @@ class Outer {
  }
 }
 ```
+答 Java   Certification    Exam
 #### 4. 以下代码能否通过编译，为什么
 ```
 class A
@@ -60,6 +62,8 @@ class A
     }
 }
 ```
+答  编译报错，非静态内部类中不能有静态方法
+
 #### 5.
 ```
 class OuterInnerStatic {
@@ -81,7 +85,7 @@ class OuterInnerStatic {
 }
 
 ```
-
+答 Java  Certification  Exam
 #### 6. 在下面的示例中，如何访问"XYZ"类的"i"字段？
 ```
 class ABC
@@ -92,6 +96,8 @@ class ABC
     }
 }
 ```
+答 ABC.XYZ a = new ABC().new XYZ();
+   a.i;
 
 #### 7. 运行以下程序时，它是否在控制台上打印“SUCCESS”？
 ```
@@ -124,7 +130,7 @@ public class MainClass
     }
 }
 ```
-
+答 运行结果：栈溢出（不懂什么意思）
 #### 8. 以下代码能否通过编译，为什么
 ```
 class A
@@ -145,6 +151,7 @@ class A
     }
 }
 ```
+答  编译报错； 静态内部类不可以访问外部类非静态属性和方法
 
 #### 9.
 ```
@@ -168,6 +175,7 @@ public class MainClass
     }
 }
 ```
+答 2 1
 #### 10.
 ```
 class A
@@ -201,6 +209,7 @@ public class MainClass
     }
 }
 ```
+答 AAA BBB BBB
 
 #### 11. 以下代码能否通过编译，为什么
 ```
@@ -223,7 +232,7 @@ class A
     }
 }
 ```
-
+答 编译报错 要先创建外部类对象
 #### 12. 以下代码能否通过编译，为什么
 ```
 class A
@@ -241,7 +250,7 @@ class A
     }
 }
 ```
-
+答  编译报错非静态内部类不可以出现static修饰的方法，及静态代码块。
 
 #### 13.
 
@@ -250,12 +259,12 @@ class A
 {
     void methodA1(int i)
     {
-        System.out.println(i+++i);
+        System.out.println(i+++i);//10+11
     }
 
     void methodA2(int i)
     {
-        System.out.println(--i-i--);
+        System.out.println(--i-i--);9-9
     }
 }
 
@@ -265,12 +274,12 @@ class B
     {
         void methodA1(int i)
         {
-            System.out.println(++i+i++);
+            System.out.println(++i+i++);11+11
         }
 
         void methodA2(int i)
         {
-            System.out.println(i---i);
+            System.out.println(i---i);10-9
         }
     };
 }
@@ -294,7 +303,7 @@ public class MainClass
 }
 
 ```
-
+答 21  0  22  1
 
 #### 14. 以下代码能否通过编译，为什么
 ```
@@ -312,6 +321,7 @@ class A
     }
 }
 ```
+答 可以通过 单继承
 
 
 #### 15. 在下面的示例中，如何访问“内部类”的“i”字段？
@@ -324,7 +334,7 @@ class OuterClass
     }
 }
 ```
-
+答  InnerClass.i
 
 #### 16.
 ```
@@ -356,7 +366,7 @@ public class MainClass
     }
 }
 ```
-
+答 BBB
 
 #### 17. 如何在class A以外的其他类中实例化 class B
 ```
@@ -371,6 +381,7 @@ class A
     }
 }
 ```
+答 实例化不了B，B是局部类
 
 #### 18.
 ```
@@ -400,6 +411,7 @@ public class Outer
 }
 
 ```
+答 编译报错 静态内部类不能访问外部类的非静态属性和方法，
 
 #### 19.
 ```
@@ -430,3 +442,4 @@ public class Outer
 }
 
 ```
+答 编译报错 具体不是很懂
