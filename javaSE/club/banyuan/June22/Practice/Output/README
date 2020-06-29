@@ -42,7 +42,7 @@ class Main {
     }
 }
 ```
-答 子类的 Derived::show() called
+答 父类的 Base::show() called
 #### 3.
 ```
 class Base {
@@ -118,7 +118,7 @@ public class Main {
 ```
 答: Derived::show() called
 
-#### 6.
+#### 6.。。。。。。。。。。。
 ```
 class A
 {
