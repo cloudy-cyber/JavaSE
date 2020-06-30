@@ -21,16 +21,16 @@ public enum WeekDay {
         return name;
     }
 
-    public boolean isWeekDay(String name) {
-        if (!this.name.equals(SATURDAY.name) && !this.name().equals(SUNDAY.name)) {
+    public boolean isWeekDay(WeekDay weekDay) {
+        if (!weekDay.equals(SATURDAY) && !weekDay.equals(SUNDAY)) {
             return true;
         } else {
             return false;
         }
     }
 
-    public boolean isHoliday(String name) {
-        if (this.name.equals(SATURDAY.name) || this.name.equals(SUNDAY.name)) {
+    public boolean isHoliday(WeekDay weekDay) {
+        if (weekDay.equals(SATURDAY) || weekDay.equals(SUNDAY)) {
             return true;
         } else {
             return false;
