@@ -50,9 +50,9 @@ public class Calculator extends CalculatorException {
             case 2:
                 // 只有一种情况，用户输入 负数
                 // TODO: complete the cases
-                if ((tokens[0].equals("-")) && (tokens[1].contains("0123456789"))) {
+                if ((tokens[0].equals("-")) && ("0123456789".contains(tokens[1]))) {
                     return -Integer.parseInt(tokens[1]);
-                } else if ((tokens[0].equals("-")) && (!tokens[1].contains("0123456789"))) {
+                } else if ((tokens[0].equals("-")) && (!"0123456789".contains(tokens[1]))) {
                     throw new IllegalInputException("Illegal Argument");
                 } else {
                     throw new IllegalInputException("Illegal Operator");
@@ -61,15 +61,15 @@ public class Calculator extends CalculatorException {
             case 3:
                 // 计算表达式
                 // TODO: complete the cases
-                if ((tokens[0].contains("0123456789")) && (tokens[1].equals("+")) && (tokens[2].contains("0123456789"))) {
+                if (("0123456789".contains(tokens[0])) && (tokens[1].equals("+")) && ("0123456789".contains(tokens[2]))) {
                     return Integer.parseInt(tokens[0]) + Integer.parseInt(tokens[2]);
-                } else if ((tokens[0].contains("0123456789")) && (tokens[1].equals("/")) && tokens[2].equals("0")) {
+                } else if (("0123456789".contains(tokens[0])) && (tokens[1].equals("/")) && tokens[2].equals("0")) {
                     throw new DivideByZeroException();
-                } else if ((tokens[0].contains("0123456789")) && (tokens[1].equals("/")) && (!tokens[2].equals("0"))) {
+                } else if (("0123456789".contains(tokens[0])) && (tokens[1].equals("/")) && (!tokens[2].equals("0"))) {
                     return Integer.parseInt(tokens[0]) / Integer.parseInt(tokens[2]);
-                }else if((!tokens[0].contains("0123456789"))&&(!tokens[1].contains("+-*/"))&&(!tokens[2].contains("0123456789"))){
+                }else if((!"0123456789".contains(tokens[0]))&&(!tokens[1].contains("+-*/"))&&(!"0123456789".contains(tokens[2]))){
                     throw new IllegalInputException("Illegal Argument");
-                }else if((tokens[0].contains("0123456789"))&&(!tokens[1].contains("+-*/"))&&(!tokens[2].contains("0123456789"))){
+                }else if(("0123456789".contains(tokens[0]))&&(!tokens[1].contains("+-*/"))&&(!"0123456789".contains(tokens[2]))){
                     throw new IllegalInputException("Illegal Argument");
                 }else{
                     throw new IllegalInputException("Illegal Operator");
@@ -108,7 +108,6 @@ public class Calculator extends CalculatorException {
         // 提取所有运算符号
         String[] tokens = input.split(" ");
         try {
-            compute(tokens);
             // TODO: complete implementation.
             System.out.println("The result is: " +compute(tokens));
         } catch (QuitException e) {
