@@ -6,6 +6,7 @@ import java.util.*;
 public class Class {
     private Set<Student> set = new HashSet<>();
 
+
     public void add(Student student){
         set.add(student);
     }
@@ -16,18 +17,16 @@ public class Class {
         }
     }
 
-    public List printId(){
+    public List<Student> sortById(){
         Set<Student> printId=new TreeSet<>(Comparator.comparingInt(Student::getId));
         printId.addAll(set);
-        List<Student> printIdList=new ArrayList<>(printId);
-        return printIdList;
+        return new ArrayList<>(printId);
     }
 
-    public List printAge(){
+    public List<Student> sortByAge(){
         Set<Student> printAge=new TreeSet<>((o1, o2) -> o2.getAge()-o1.getAge());
         printAge.addAll(set);
-        List<Student> printAgeList=new ArrayList<>(printAge);
-        return printAgeList;
+        return new ArrayList<>(printAge);
     }
 
 
@@ -40,8 +39,8 @@ public class Class {
 
         students.print();
         System.out.println("=================");
-        System.out.println(students.printId());
-        System.out.println(students.printAge());
+        System.out.println(students.sortById());
+        System.out.println(students.sortByAge());
 
 
     }
