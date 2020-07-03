@@ -14,7 +14,7 @@ public class UnknownPersonException extends RuntimeException{
     }
 
     @Override
-    public String getMessage(){
+    public String getMessage() {
         return message;
     }
 }

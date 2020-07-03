@@ -28,13 +28,14 @@ public class Append implements Timer {
 
     public static void main(String args[]) {
         Append time = new Append();
-        List<Integer>list=new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
         for (int i = 0; i < 1000000; i++) {
-            if(i==0){
+            if (i == 0) {
                 time.start();
                 list.add(i);
             }
-        }time.stop();
+        }
+        time.stop();
         System.out.println(timeStart);
         System.out.println(time.timeEnd);
         System.out.println(time.getTimeMillisecond());

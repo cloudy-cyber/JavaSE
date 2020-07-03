@@ -1,9 +1,6 @@
 package club.banyuan.July2.Homework.Recommend;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class PersonalRecommender implements Recommender {
 
@@ -32,19 +29,30 @@ public class PersonalRecommender implements Recommender {
 
     @Override
     public List<String> recommendByPerson(String personName) {
-        return likes.get(personName);
+        List<String> list = likes.get(personName);
+        Set<String> result = new HashSet<>();
+        for (List<String> one : likes.values()) {
+            List<String> list1 = new ArrayList<>(one);
+            list1.retainAll(list);//保留两个list中有交集的部分
+            if (list1.size() > 0) {
+                result.addAll(one);
+            }
+        }
+        result.addAll(list);
+        return new LinkedList<>(result);
     }
 
     @Override
     public List<String> recommendByProject(String projectName) {
-        List<String> recommendList = new LinkedList<>();
-        for (List<String> one : likes.values()) {
-            if (one.contains(projectName)) {
-                recommendList.addAll(one);
-                recommendList.remove(projectName);
+      Set<String>setProject=new HashSet<>();
+      List<String>result=new LinkedList<>(setProject);
+        for (List<String> value : likes.values()) {
+            if(value.contains(projectName)){
+              setProject.addAll(value);
             }
         }
-        return recommendList;
+        return result;
     }
 }
+
 

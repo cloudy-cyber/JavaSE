@@ -26,10 +26,10 @@ public class Prepend implements Timer {
     private static long timeEnd;
 
     public static void main(String args[]) {
-       Prepend time=new Prepend();
-        LinkedList<Integer>list=new LinkedList<>();
+        Prepend time = new Prepend();
+        LinkedList<Integer> list = new LinkedList<>();
         for (int i = 0; i < 1000000; i++) {
-            if(i==0){
+            if (i == 0) {
                 time.start();
                 list.add(i);
             }
@@ -53,17 +53,17 @@ public class Prepend implements Timer {
         if (timeStart == 0) {
             throw new IllegalStateException("没开始怎么结束？");
         }
-        timeEnd=System.currentTimeMillis();
+        timeEnd = System.currentTimeMillis();
     }
 
     @Override
     public void reset() {
-        timeStart=0;
-        timeEnd=0;
+        timeStart = 0;
+        timeEnd = 0;
     }
 
     @Override
     public long getTimeMillisecond() {
-        return timeEnd-timeStart;
+        return timeEnd - timeStart;
     }
 }
