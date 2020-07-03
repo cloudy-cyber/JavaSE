@@ -1,0 +1,337 @@
+#### 1.
+```
+class Main {
+   public static void main(String args[]) {
+      try {
+         throw 10;//必须抛出Throwable的子类
+      }
+      catch(int e) {//必须接受上面可以抛出的异常类
+         System.out.println("Got the  Exception " + e);
+      }
+  }
+}
+```
+答 第六行和第八行需要为throwable类型
+#### 2.
+```
+class Test extends Exception { }
+
+class Main {
+   public static void main(String args[]) {
+      try {
+         throw new Test();
+      }
+      catch(Test t) {
+         System.out.println("Got the Test Exception");
+      }
+      finally {
+         System.out.println("Inside finally block ");
+      }
+  }
+}
+```
+答 Got the Test Exception  Inside finally block
+#### 3.
+```
+class Main {
+   public static void main(String args[]) {
+      int x = 0;
+      int y = 10;
+      int z = y/x;
+  }
+}
+```
+答 算术异常
+#### 4.
+```
+class Base extends Exception {}
+class Derived extends Base  {}
+
+public class Main {
+  public static void main(String args[]) {
+   // some other stuff
+   try {
+       // Some monitored code
+       throw new Derived();
+    }
+    catch(Base b)     {
+       System.out.println("Caught base class exception");
+    }
+    catch(Derived d)  {
+       System.out.println("Caught derived class exception");
+    }
+  }
+}
+```
+答 编译报错
+#### 5.
+```
+class Test
+{
+    public static void main (String[] args)
+    {
+        try
+        {
+            int a = 0;
+            System.out.println ("a = " + a);
+            int b = 20 / a;
+            System.out.println ("b = " + b);
+        }
+
+        catch(ArithmeticException e)
+        {
+            System.out.println ("Divide by zero error");
+        }
+
+        finally
+        {
+            System.out.println ("inside the finally block");
+        }
+    }
+}
+```
+答 a = 0，Divide by zero error inside the finally block
+#### 6.
+```
+class Test
+{
+    public static void main(String[] args)
+    {
+        try
+        {
+            int a[]= {1, 2, 3, 4};
+            for (int i = 1; i <= 4; i++)
+            {
+                System.out.println ("a[" + i + "]=" + a[i] + "n");
+            }
+        }
+
+        catch (Exception e)//父类要放在下面
+        {
+            System.out.println ("error = " + e);
+        }
+
+        catch (ArrayIndexOutOfBoundsException e)
+        {
+            System.out.println ("ArrayIndexOutOfBoundsException");
+        }
+    }
+}
+```
+答 父类要放在下面
+#### 7.
+```
+class Test
+{
+    String str = "a";//1
+
+    void A()
+    {
+        try
+        {
+            str +="b";//2
+            B();
+        }
+        catch (Exception e)
+        {
+            str += "c";
+        }
+    }
+
+    void B() throws Exception
+    {
+        try
+        {
+            str += "d";//3
+            C();
+        }
+        catch(Exception e)
+        {
+            throw new Exception();//4
+        }
+        finally
+        {
+            str += "e";
+        }
+
+        str += "f";
+
+    }
+
+    void C() throws Exception
+    {
+        throw new Exception();
+    }
+
+    void display()
+    {
+        System.out.println(str);
+    }
+
+    public static void main(String[] args)
+    {
+        Test object = new Test();
+        object.A();
+        object.display();
+    }
+
+}
+
+```
+答 abdec
+#### 8.
+```
+class Test
+{   int count = 0;
+
+    void A() throws Exception
+    {
+        try
+        {
+            count++;// 1
+
+            try
+            {
+                count++;// 2
+
+                try
+                {
+                    count++;// 3
+                    throw new Exception();
+
+                }
+
+                catch(Exception ex)
+                {
+                    count++;// 4
+                    throw new Exception();
+                }
+            }
+
+            catch(Exception ex)
+            {
+                count++;// 5
+            }
+        }
+
+        catch(Exception ex)
+        {
+            count++;// 不执行 ，因为没有抛新的异常
+        }
+
+    }
+
+    void display()
+    {
+        System.out.println(count);
+    }
+
+    public static void main(String[] args) throws Exception
+    {
+        Test obj = new Test();
+        obj.A();
+        obj.display();
+    }
+}
+```
+答 5
+#### 9.方法返回值是
+```
+public int myMethod(){
+
+  try {
+
+  return 1;
+
+  }
+
+  Catch (Exception e){
+
+  return 2;
+
+  }
+
+  finally{
+
+  return 3;
+
+ }
+
+}
+```
+答 3
+#### 10.
+
+```
+ try {
+
+      File file = new File("filename.txt");
+
+      Scanner sc = new Scanner(file);
+
+      throw new IOException();
+    }
+
+    catch (FileNotFoundException e) {
+
+      System.out.println("FileNotFoundException called!!!");
+
+    }
+
+    catch (IOException e) {
+
+      System.out.println("IOException called!!!");
+
+    }
+
+```
+#### 11.
+
+```
+try {
+
+      File file = new File("filename.txt");
+
+      Scanner sc = new Scanner(file);
+
+      throw new IOException();
+    }
+
+    catch (IOException e) {
+
+      System.out.println("IOException called!!!");
+
+    }
+```
+
+#### 12.
+```
+public class Test {
+
+    private static String result = "";
+
+    public static void main(String[] args) {
+        test(1);
+        result += "*";
+        test(0);
+        System.out.println(result);
+    }
+
+    public static void test(int i) {
+        result += "1";
+        try {
+            if (i == 0) {
+                throw new RuntimeException("");
+            }
+            result += "2";
+        } catch (Exception e) {
+            result += "3";
+            return;
+        } finally {
+            result += "4";
+        }
+        result += "5";
+    }
+}
+```
+答 1245*134
