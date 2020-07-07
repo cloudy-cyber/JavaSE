@@ -18,7 +18,7 @@ public class ReverseHelloTest {
   public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
 
   @Test
-  public void testReverseHello() {
+  public void testReverseHello() throws InterruptedException {
     ReverseHelloMultithreaded.doReverseHello();
     String expectedOutput = "";
     for (int i = 50; i >= 1; i--) {
