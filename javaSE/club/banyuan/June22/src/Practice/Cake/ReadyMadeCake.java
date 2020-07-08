@@ -1,4 +1,4 @@
-package club.banyuan.June22.Practice.Cake;
+//package club.banyuan.June22.Practice.Cake;
 
 public class ReadyMadeCake extends Cake {
     private int quantity;
