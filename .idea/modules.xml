@@ -4,10 +4,15 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/javaSE/club/banyuan/July9 IO/Practice/01.File/01.File.iml" filepath="$PROJECT_DIR$/javaSE/club/banyuan/July9 IO/Practice/01.File/01.File.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaSE/club/banyuan/July9 IO/Homework/01.SplitFile/01.SplitFile.iml" filepath="$PROJECT_DIR$/javaSE/club/banyuan/July9 IO/Homework/01.SplitFile/01.SplitFile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaSE/club/banyuan/July13网络编程/Homework/01.UDP/01.UDP.iml" filepath="$PROJECT_DIR$/javaSE/club/banyuan/July13网络编程/Homework/01.UDP/01.UDP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaSE/club/banyuan/July9 IO/Homework/02.CaesarCipher/02.CaesarCipher.iml" filepath="$PROJECT_DIR$/javaSE/club/banyuan/July9 IO/Homework/02.CaesarCipher/02.CaesarCipher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaSE/club/banyuan/July13网络编程/Homework/02.TCP/02.TCP.iml" filepath="$PROJECT_DIR$/javaSE/club/banyuan/July13网络编程/Homework/02.TCP/02.TCP.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaSE/club/banyuan/July7/Practice/03.SyncCounter/03.SyncCounter.iml" filepath="$PROJECT_DIR$/javaSE/club/banyuan/July7/Practice/03.SyncCounter/03.SyncCounter.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaSE/club/banyuan/July7/Homework/04.PhoneSimulator/04.PhoneSimulator.iml" filepath="$PROJECT_DIR$/javaSE/club/banyuan/July7/Homework/04.PhoneSimulator/04.PhoneSimulator.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaSE/club/banyuan/July7/Homework/05.PhoneSimulatoRefine/05.PhoneSimulatoRefine.iml" filepath="$PROJECT_DIR$/javaSE/club/banyuan/July7/Homework/05.PhoneSimulatoRefine/05.PhoneSimulatoRefine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaSE/club/banyuan/July9 IO/Homework/06.VideoStore/06.VideoStore.iml" filepath="$PROJECT_DIR$/javaSE/club/banyuan/July9 IO/Homework/06.VideoStore/06.VideoStore.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaSE/club/banyuan/July8线程同步/Homework/07.Philosophy/07.Philosophy.iml" filepath="$PROJECT_DIR$/javaSE/club/banyuan/July8线程同步/Homework/07.Philosophy/07.Philosophy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaSE/club/banyuan/July9 IO/Homework/07.Resource/07.Resource.iml" filepath="$PROJECT_DIR$/javaSE/club/banyuan/July9 IO/Homework/07.Resource/07.Resource.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaSE/6.10作业/6.10作业.iml" filepath="$PROJECT_DIR$/javaSE/6.10作业/6.10作业.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaSE/6.11作业/6.11作业.iml" filepath="$PROJECT_DIR$/javaSE/6.11作业/6.11作业.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaSE/6.12~6.13作业/6.12~6.13作业.iml" filepath="$PROJECT_DIR$/javaSE/6.12~6.13作业/6.12~6.13作业.iml" />
@@ -17,9 +22,12 @@
       <module fileurl="file://$PROJECT_DIR$/javaSE/6.12~6.13作业/Circle/Circle.iml" filepath="$PROJECT_DIR$/javaSE/6.12~6.13作业/Circle/Circle.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaSE/July2.iml" filepath="$PROJECT_DIR$/javaSE/July2.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaSE/June6.17.iml" filepath="$PROJECT_DIR$/javaSE/June6.17.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaSE/club/banyuan/July13网络编程/Practice/Practice.iml" filepath="$PROJECT_DIR$/javaSE/club/banyuan/July13网络编程/Practice/Practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaSE/club/banyuan/July8线程同步/Practice/Practice2/Practice2.iml" filepath="$PROJECT_DIR$/javaSE/club/banyuan/July8线程同步/Practice/Practice2/Practice2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javaSE/club/banyuan/July13网络编程/Teacher/Teacher.iml" filepath="$PROJECT_DIR$/javaSE/club/banyuan/July13网络编程/Teacher/Teacher.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/daiyuxiang.iml" filepath="$PROJECT_DIR$/.idea/daiyuxiang.iml" />
       <module fileurl="file://$PROJECT_DIR$/untitled/untitled.iml" filepath="$PROJECT_DIR$/untitled/untitled.iml" />
+      <module fileurl="file://$PROJECT_DIR$/untitled1/untitled1.iml" filepath="$PROJECT_DIR$/untitled1/untitled1.iml" />
     </modules>
   </component>
 </project>
