@@ -98,12 +98,13 @@ public class ProviderService {
     }
 
     public List<Provider> getProviderList(Provider provider) {
-        if (provider.getName() == null || provider.getName().trim().length() == 0) {
+        if ((provider.getName() == null || provider.getName().trim().length() == 0) && (provider.getDesc() == null || provider.getDesc().trim().length() == 0)) {
             return getProviderList();
         }
+
         List<Provider> list = new ArrayList<>();
         for (Provider provider1 : providerList) {
-            if (provider1.getName().contains(provider.getName().trim())) {
+            if ((provider1.getName().contains(provider.getName().trim())) && (provider1.getDesc().contains(provider.getDesc().trim()))) {
                 list.add(provider1);
             }
         }
@@ -111,8 +112,7 @@ public class ProviderService {
     }
 
 
-
-    public void deleteUserById(int id) {
+    public void deleteProviderById(int id) {
         List<Provider> list = new ArrayList<>();
         synchronized (providerList) {
             for (Provider provider : providerList) {

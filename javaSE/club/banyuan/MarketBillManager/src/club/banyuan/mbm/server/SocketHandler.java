@@ -1,19 +1,16 @@
 package club.banyuan.mbm.server;
 
+import club.banyuan.mbm.entity.Bill;
 import club.banyuan.mbm.entity.Provider;
 import club.banyuan.mbm.entity.User;
 import club.banyuan.mbm.exception.BadRequestException;
 import club.banyuan.mbm.exception.FormPostException;
+import club.banyuan.mbm.service.BillService;
 import club.banyuan.mbm.service.ProviderService;
 import club.banyuan.mbm.service.UserService;
 import com.alibaba.fastjson.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.Socket;
 import java.net.URLDecoder;
 import java.util.List;
@@ -25,6 +22,7 @@ public class SocketHandler extends Thread {
     private Socket clientSocket;
     private UserService userService = new UserService();
     private ProviderService providerService = new ProviderService();
+    private BillService billService = new BillService();
 
     public SocketHandler(Socket clientSocket) {
         this.clientSocket = clientSocket;
@@ -215,12 +213,57 @@ public class SocketHandler extends Thread {
             }
             break;
             //删除供应商
-            case "/server/provider/delete":{
-                String payload=mbmRequest.getPayload();
-                Provider providerId=JSONObject.parseObject(payload,Provider.class);
-                providerService.deleteUserById(providerId.getId());
+            case "/server/provider/delete": {
+                String payload = mbmRequest.getPayload();
+                Provider providerId = JSONObject.parseObject(payload, Provider.class);
+                providerService.deleteProviderById(providerId.getId());
                 responseOk();
             }
+            break;
+            //账单查询
+            case "/server/bill/list": {
+                List<Bill> billList;
+                String payload = mbmRequest.getPayload();
+                if (payload == null) {
+                    billList = BillService.getBillList();
+                } else {
+                    Bill bill = JSONObject.parseObject(payload, Bill.class);
+                    billList = BillService.getBillList(bill);
+                }
+                responseJson(billList);
+            }
+            break;
+            //账单添加/修改
+            case "/server/bill/modify": {
+                Map<String, String> formData = mbmRequest.getFormData();
+                String data = JSONObject.toJSONString(formData);
+                Bill bill = JSONObject.parseObject(data, Bill.class);
+                if (bill.getId() == 0) {
+                    BillService.addBill(bill,providerService);
+                } else {
+                    BillService.updateBill(bill,providerService);
+                }
+                responseRedirect(mbmRequest, "/bill_list.html");
+            }
+            break;
+            //根据id查询账单信息
+            case "/server/bill/get": {
+                String payload = mbmRequest.getPayload();
+                System.out.println("/server/bill/get");
+                System.out.println(payload);
+                Bill billId=JSONObject.parseObject(payload,Bill.class);
+                Bill bill=BillService.getBillById(billId.getId());
+                responseJson(bill);
+            }
+            break;
+            //删除账单
+            case "/server/bill/delete":{
+                String payload=mbmRequest.getPayload();
+                Bill billId=JSONObject.parseObject(payload,Bill.class);
+                BillService.deleteBillById(billId.getId());
+                responseOk();
+            }
+            break;
         }
     }
 

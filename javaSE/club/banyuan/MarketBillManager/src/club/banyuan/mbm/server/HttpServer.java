@@ -22,6 +22,8 @@ public class HttpServer {
       socketHandler.start();
     }
 
+
+
     // response header
     // HTTP/1.1 200 OK
     // Content-Type: text/html; charset=utf-8
